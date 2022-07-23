@@ -24,6 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: actions/setup-python@4
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -36,8 +40,4 @@ jobs:
           echo test, and deploy your project.
       
       - name: Try Python UnitTest
-      - uses: actions/setup-python@4
-        with:
-          python-version: '3.8'
-          architecture: 'x64'
-      - run: python3 ./src/test_name_function.py
+        run: python3 ./src/test_name_function.py
