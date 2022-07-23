@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
       
       - name: Try Python UnitTest
-      - users: actions/setup-python@4
+      - uses: actions/setup-python@4
         with:
           python-version: '3.8'
           architecture: 'x64'
